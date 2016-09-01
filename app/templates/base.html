@@ -1,0 +1,33 @@
+<html>
+<head>
+    {% if title %}
+    <title>{{ title }} - spotify</title>
+    {% else %}
+    <title>Spotify</title>
+    {% endif %}
+    <!--
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    -->
+    <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/skeleton.css") }}' />
+    <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/normalize.css") }}' />
+</head>
+<body>
+    <div class='container'>
+        <div class='nav'>
+            <a href='/'>Home</a>
+            {% if user %}
+            <div class='loggedin u-pull-right'>
+                Hey {{ user }}!
+            </div>
+            {% else %}
+            <a class='button button-primary u-pull-right' href='/login'>
+                Login
+            </a>
+            {% endif %}
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+

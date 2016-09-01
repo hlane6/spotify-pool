@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if features %}
+    <table>
+        {% for item in features %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ features[item] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>tdere was no resposne</p>
+    {% endif %}
+{% endblock %}

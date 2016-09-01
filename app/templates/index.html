@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if playlists %}
+    <ul>
+        {% for playlist in playlists %}
+        <li>
+            <a href='/playlists/{{ playlist.owner.id }}/{{ playlist.id }}'>{{ playlist.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no playlists to display</p>
+    {% endif %}
+{% endblock %}

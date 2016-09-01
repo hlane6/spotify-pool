@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="tracks">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Album</th>
+            </tr>
+            {% for item in tracks %}
+            <tr>
+                <td><a href="/features/{{ item.track.id }}">{{ item.track.name }}</a></td>
+                <td>{{ item.track.artists[0].name }}</td>
+                <td>{{ item.track.album.name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
